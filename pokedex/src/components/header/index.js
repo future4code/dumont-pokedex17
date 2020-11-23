@@ -1,11 +1,11 @@
 import React from 'react';
 import { MainContainer } from './styled';
 
-function Header() {
+function Header(props) {
     return(
         <MainContainer>
             <button>a</button>
-            <h1>texto</h1>
+            <h1>{props.title}</h1>
             <button>a</button>
         </MainContainer>
     );

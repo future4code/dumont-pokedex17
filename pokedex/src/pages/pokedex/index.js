@@ -6,7 +6,7 @@ import { CardsContainer } from './styled'
 function Pokedex() {
     return(
         <div>
-            <Header />
+            <Header title={'Minha Pokédex'} />
             <CardsContainer>
                 <PokeCard />
                 <PokeCard />

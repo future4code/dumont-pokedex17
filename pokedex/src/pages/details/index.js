@@ -5,7 +5,7 @@ import { DetailsContainer, ImagesContainer, StatsContainer, TypesMovesContainer 
 function Details() {
     return(
         <div>
-            <Header />
+            <Header title={'Nome do Pokémon'} />
             <DetailsContainer>
                 <ImagesContainer>
                     <div>

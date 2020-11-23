@@ -6,7 +6,7 @@ import { CardsContainer } from './styled'
 function Home() {
     return (
         <div>
-            <Header />
+            <Header title={'Lista de Pokémons'} />
             <CardsContainer>
                 <PokeCard />
                 <PokeCard />
