@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from '../../components/header/index'
+import Header from '../../components/Header/index'
 import { DetailsContainer, ImagesContainer, StatsContainer, TypesMovesContainer } from './styled';
 
 function Details() {
     return(
         <div>
             <Header title={'Nome do Pokémon'} />
+            
             <DetailsContainer>
                 <ImagesContainer>
                     <div>

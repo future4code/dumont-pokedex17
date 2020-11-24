@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../../components/header/index'
-import PokeCard from '../../components/pokeCard/index'
+import Header from '../../components/Header'
+import PokeCard from '../../components/PokemonCard'
 import { CardsContainer } from './styled'
 
-function Pokedex() {
-    return(
+function Home() {
+    return (
         <div>
-            <Header title={'Minha Pokédex'} />
+            <Header title={'Lista de Pokémons'} />
+            
             <CardsContainer>
                 <PokeCard />
                 <PokeCard />
@@ -17,4 +18,4 @@ function Pokedex() {
     );
 }
 
-export default Pokedex;
+export default Home;
