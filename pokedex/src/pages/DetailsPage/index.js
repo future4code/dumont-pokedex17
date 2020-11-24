@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../../components/Header/index'
+import Header from '../../components/Header/index';
 import { DetailsContainer, ImagesContainer, StatsContainer, TypesMovesContainer } from './styled';
 
-function Details() {
-    return(
+const Details = () => {
+    return (
         <div>
             <Header title={'Nome do Pokémon'} />
-            
+
             <DetailsContainer>
                 <ImagesContainer>
                     <div>
@@ -28,7 +28,7 @@ function Details() {
                 </TypesMovesContainer>
             </DetailsContainer>
         </div>
-    );
-}
+    )
+};
 
 export default Details;

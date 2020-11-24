@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../../components/Header'
-import PokeCard from '../../components/PokemonCard'
-import { CardsContainer } from './styled'
+import Header from '../../components/Header';
+import PokeCard from '../../components/PokemonCard';
+import { CardsContainer } from './styled';
 
-function Home() {
+const Home = () => {
     return (
         <div>
             <Header title={'Lista de Pokémons'} />
@@ -15,7 +15,7 @@ function Home() {
                 <PokeCard />
             </CardsContainer>
         </div>
-    );
-}
+    )
+};
 
 export default Home;

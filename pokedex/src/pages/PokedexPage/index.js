@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../../components/Header'
-import PokeCard from '../../components/PokemonCard'
-import { CardsContainer } from './styled'
+import Header from '../../components/Header';
+import PokeCard from '../../components/PokemonCard';
+import { CardsContainer } from './styled';
 
-function Pokedex() {
-    return(
+const Pokedex = () => {
+    return (
         <div>
             <Header title={'Minha Pokédex'} />
 
@@ -15,7 +15,7 @@ function Pokedex() {
                 <PokeCard />
             </CardsContainer>
         </div>
-    );
-}
+    )
+};
 
 export default Pokedex;

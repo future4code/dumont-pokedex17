@@ -13,6 +13,7 @@ export const MainContainer = styled.div`
 export const ButtonContainer = styled.div`
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 300px;
     height: 100px;
     border: 1px solid black;
