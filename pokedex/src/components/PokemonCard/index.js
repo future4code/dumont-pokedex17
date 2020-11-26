@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { MainContainer, ButtonContainer } from './styled';
 
-const PokeCard = () => {
+const PokeCard = (props) => {
+    const [pokemonDetails, setPokemonDetails] = useState([])
+    const [pokemonImage, setPokemonImage] = useState()
+
+    useEffect(() => {
+        getPokemonDetails()
+    }, [])
+
+    const getPokemonDetails = () => {
+        axios
+            .get(`${props.pokemonURL}`)
+            .then((response) => {
+                setPokemonDetails(response)
+                setPokemonImage(response.data.sprites.front_default)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
     return (
         <MainContainer>
-            <p>pokecard</p>
+            <p>{props.pokemonName}</p>
+            <img src={pokemonImage} />
             <ButtonContainer>
-                <button>adicionar</button>
+                <button onClick={props.addToPokedex}>adicionar</button>
                 <Link to={'/details'}>
                     <button>ver detalhe</button>
                 </Link>
