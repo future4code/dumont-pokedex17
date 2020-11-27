@@ -23,27 +23,6 @@ const PokeCard = (props) => {
             })
     }
 
-
-const PokeCard = (props) => {
-    const [pokemonDetails, setPokemonDetails] = useState([])
-    const [pokemonImage, setPokemonImage] = useState()
-
-    useEffect(() => {
-        getPokemonDetails()
-    }, [])
-
-    const getPokemonDetails = () => {
-        axios
-            .get(`${props.pokemonURL}`)
-            .then((response) => {
-                setPokemonDetails(response)
-                setPokemonImage(response.data.sprites.front_default)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }
-
     return (
         <MainContainer>
             <p>{props.pokemonName}</p>
@@ -57,4 +36,5 @@ const PokeCard = (props) => {
         </MainContainer>
     )
 };
-export default PokeCard;
+
+export default PokeCard

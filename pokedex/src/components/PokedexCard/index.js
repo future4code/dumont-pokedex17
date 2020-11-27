@@ -30,7 +30,7 @@ const PokedexCard = (props) => {
             <ButtonContainer>
                 <Button onClick={props.removePokemon}>remover</Button>
                 <Link to={'/details'}>
-                    <Button>ver detalhe</Button>
+                    <button onClick={props.setPokemon}>ver detalhe</button>
                 </Link>
             </ButtonContainer>
         </MainContainer>

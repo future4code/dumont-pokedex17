@@ -16,7 +16,7 @@ const Pokedex = () => {
 
     const pokemonsInPokedex = states.pokedex && states.pokedex.map((pokemon) => {
         return (
-            <PokeCard
+            <PokedexCard
                 key={pokemon.name}
                 pokemonName={pokemon.name}
                 pokemonURL={pokemon.url}
