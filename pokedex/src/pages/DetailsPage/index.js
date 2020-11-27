@@ -1,33 +1,37 @@
-import {React, useEffect, useState} from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useContext } from 'react';
+import axios from 'axios'
 import Header from '../../components/header/index';
 import { DetailsContainer, StatsContainer, TypesContainer, MovesContainer,SpritesContainer, SpritesFront, SpritesBack, TypesMoveContainer } from './styled';
+import GlobalStateContext from '../../global/GlobalStateContext';
 
 const Details = () => {
-    const [pokemon] = useState('stunky');
+    const { states } = useContext(GlobalStateContext)
+
     const [pokemonData, setPokemonData] = useState([]);
     const [pokemonType, setPokemonType] = useState('');
     const [pokemonMoves, setPokemonMoves] = useState([]);
 
     useEffect(() => {
-        getPokemon()
+        getPokemonDetail()
     }, [])
 
-    const getPokemon = () => {
-        const toArray = []
-    axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-        .then((res) => {
-            toArray.push(res.data)
-            setPokemonType(res.data.types)
-            setPokemonData(toArray)
-            setPokemonMoves(res.data.moves)
-            console.log(res)
-        })
-        .catch((e) => {
-            console.log(e.message)
-        })
+    const getPokemonDetail = () => {
+        const dataArray = []
+        axios
+            .get(`https://pokeapi.co/api/v2/pokemon/${states.pokemonToDetail}`)
+            .then((response) => {
+                dataArray.push(response.data)
+                setPokemonType(response.data.types)
+                setPokemonData(dataArray)
+                setPokemonMoves(response.data.moves)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
+
+    console.log('aqui', states.pokemonToDetail)
+
     return (
         <div>
             <Header title={'Nome do Pokémon'} />
@@ -37,11 +41,11 @@ const Details = () => {
                     <DetailsContainer>
                     <SpritesContainer>
                         <SpritesFront>
-                            <img src={data.sprites['front_default']} />
+                            <img src={data.sprites['front_default']} alt='imagem de frente' />
                         </SpritesFront>
     
                         <SpritesBack>
-                            <img src={data.sprites['back_default']} />
+                            <img src={data.sprites['back_default']} alt='imagem de costas'/>
                         </SpritesBack>
                     </SpritesContainer>
     

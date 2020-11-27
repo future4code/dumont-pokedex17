@@ -5,7 +5,8 @@ import { CardsContainer } from './styled';
 import GlobalStateContext from '../../global/GlobalStateContext';
 
 const Pokedex = () => {
-    const { states } = useContext(GlobalStateContext)
+
+    const { states, setters } = useContext(GlobalStateContext)
 
     const pokemonsInPokedex = states.pokedex && states.pokedex.map((pokemon) => {
         return (
@@ -13,9 +14,14 @@ const Pokedex = () => {
                 key={pokemon.name}
                 pokemonName={pokemon.name}
                 pokemonURL={pokemon.url}
+                setPokemon = {() => setPokemon(pokemon.name)}
             />
         )
     })
+
+    const setPokemon = (pokemon) => {
+        setters.setPokemonToDetail(pokemon)
+    }
 
     return (
         <div>

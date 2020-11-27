@@ -5,6 +5,7 @@ import GlobalStateContext from './GlobalStateContext';
 const GlobalState = (props) => {
     const [pokemonList, setPokemonList] = useState([])
     const [pokedex, setPokedex] = useState([])
+    const [pokemonToDetail, setPokemonToDetail] = useState([])
 
     const getPokemons = () => {
         axios
@@ -17,8 +18,8 @@ const GlobalState = (props) => {
             })
     }
 
-    const states = { pokemonList, pokedex };
-    const setters = { setPokemonList, setPokedex }
+    const states = { pokemonList, pokedex, pokemonToDetail };
+    const setters = { setPokemonList, setPokedex, setPokemonToDetail }
     const requests = { getPokemons };
 
     const data = { states, setters, requests };
