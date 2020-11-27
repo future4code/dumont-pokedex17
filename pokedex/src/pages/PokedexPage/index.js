@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
 import Header from '../../components/header/index';
-import PokeCard from '../../components/PokemonCard';
+import PokedexCard from '../../components/PokedexCard';
 import { CardsContainer } from './styled';
 import GlobalStateContext from '../../global/GlobalStateContext';
 
 const Pokedex = () => {
-
     const { states, setters } = useContext(GlobalStateContext)
+  
+    const removeFromPokedex =(pokeToRemove) => {
+        const index = states.pokedex.findIndex((pokemon) => pokemon.name === pokeToRemove.name)
+        let newPokedex = [...states.pokedex]
+        newPokedex.splice(index, 1)
+        setters.setPokedex(newPokedex)
+    }
 
     const pokemonsInPokedex = states.pokedex && states.pokedex.map((pokemon) => {
         return (
@@ -15,6 +21,7 @@ const Pokedex = () => {
                 pokemonName={pokemon.name}
                 pokemonURL={pokemon.url}
                 setPokemon = {() => setPokemon(pokemon.name)}
+                removePokemon={() => removeFromPokedex(pokemon)}
             />
         )
     })
@@ -33,5 +40,4 @@ const Pokedex = () => {
         </div>
     )
 };
-
 export default Pokedex;

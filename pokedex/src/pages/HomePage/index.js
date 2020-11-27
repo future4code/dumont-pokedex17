@@ -43,6 +43,6 @@ const Home = () => {
             </CardsContainer>
         </div>
     )
-};
 
+};
 export default Home;
