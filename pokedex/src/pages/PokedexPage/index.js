@@ -6,7 +6,7 @@ import GlobalStateContext from '../../global/GlobalStateContext';
 
 const Pokedex = () => {
     const { states, setters } = useContext(GlobalStateContext)
-
+  
     const removeFromPokedex =(pokeToRemove) => {
         const index = states.pokedex.findIndex((pokemon) => pokemon.name === pokeToRemove.name)
         let newPokedex = [...states.pokedex]
@@ -16,14 +16,19 @@ const Pokedex = () => {
 
     const pokemonsInPokedex = states.pokedex && states.pokedex.map((pokemon) => {
         return (
-            <PokedexCard
+            <PokeCard
                 key={pokemon.name}
                 pokemonName={pokemon.name}
                 pokemonURL={pokemon.url}
+                setPokemon = {() => setPokemon(pokemon.name)}
                 removePokemon={() => removeFromPokedex(pokemon)}
             />
         )
     })
+
+    const setPokemon = (pokemon) => {
+        setters.setPokemonToDetail(pokemon)
+    }
 
     return (
         <div>
