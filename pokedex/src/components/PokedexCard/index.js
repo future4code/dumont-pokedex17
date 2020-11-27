@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { MainContainer, ButtonContainer, Button } from './styled';
+import { MainContainer, ButtonContainer } from './styled';
+import Button from '@material-ui/core/Button';
+
 
 const PokedexCard = (props) => {
     const [pokemonDetails, setPokemonDetails] = useState([])
@@ -28,9 +30,9 @@ const PokedexCard = (props) => {
             <p>{props.pokemonName}</p>
             <img src={pokemonImage} />
             <ButtonContainer>
-                <Button onClick={props.removePokemon}>remover</Button>
+                <Button variant="contained" onClick={props.removePokemon}>remover</Button>
                 <Link to={'/details'}>
-                    <button onClick={props.setPokemon}>ver detalhe</button>
+                    <Button variant="contained" onClick={props.setPokemon}>ver detalhe</Button>
                 </Link>
             </ButtonContainer>
         </MainContainer>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { MainContainer, Button } from './styled';
+import { MainContainer } from './styled';
+import Button from '@material-ui/core/Button';
+
 
 const Header = (props) => {
     const history = useHistory()
@@ -14,18 +16,18 @@ const Header = (props) => {
             case ('Lista de Pokémons'):
                 return (
                     <Link to={'/pokedex'}>
-                        <Button>Ver minha Pokédex</Button>
+                        <Button variant="contained" >Ver minha Pokédex</Button>
                     </Link>
                 )
             case ('Minha Pokédex'):
                 return (
                     <Link to={'/'}>
-                        <Button>Voltar para Lista</Button>
+                        <Button variant="contained">Voltar para Lista</Button>
                     </Link>
                 )
             case ('Nome do Pokémon'):
                 return (
-                    <Button onClick={goBack}>
+                    <Button  variant="contained" onClick={goBack}>
                         Voltar
                     </Button>
                 )
@@ -38,7 +40,7 @@ const Header = (props) => {
         switch (props.title) {
             case ('Nome do Pokémon'):
                 return (
-                    <Button>
+                    <Button variant="contained">
                         Adicionar ou Remover da Pokédex
                     </Button>
                 )
@@ -52,9 +54,7 @@ const Header = (props) => {
     return (
         <MainContainer>
             <Button1 />
-
             <h1>{props.title}</h1>
-
             <Button2 />
         </MainContainer>
     )
