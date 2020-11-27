@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Sarah Pereira Hessel
 - Noh Ah Jeong
 
-Link do Surge: aromatic-pig.surge.sh
+Link do Surge: https://racial-houses.surge.sh/
 
 O que funciona:
 - Item 1
