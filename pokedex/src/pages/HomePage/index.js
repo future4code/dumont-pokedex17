@@ -1,34 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useContext, useEffect } from 'react';
 import Header from '../../components/header/index';
 import PokeCard from '../../components/PokemonCard';
 import { CardsContainer } from './styled';
+import GlobalStateContext from '../../global/GlobalStateContext';
 
 const Home = () => {
-    const [pokemonList, setPokemonList] = useState([])
-
-    const getPokemon = () => {
-        axios
-            .get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20')
-            .then((response) => {
-                setPokemonList(response.data.results)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }
+    const { states, setters, requests } = useContext(GlobalStateContext)
 
     useEffect(() => {
-        getPokemon()
+        requests.getPokemons()
     }, [])
 
-    // console.log(pokemonList)
-
-    const pokemonsInPokeCard = pokemonList.map((pokemon) => {
+    const pokemonsInPokeCard = states.pokemonList.map((pokemon) => {
         return (
-            <PokeCard key={pokemon.name} pokemonName={pokemon.name} pokemonURL={pokemon.url} />
+            
+            <PokeCard
+                key={pokemon.name}
+                pokemonName={pokemon.name}
+                pokemonURL={pokemon.url}
+                addToPokedex = {() => addToPokedex(pokemon)}
+            />
         )
     })
+
+    const addToPokedex = (newPokemon) => {
+        // const index = states.pokedex.findIndex((index) => index.name === newPokemon.name)
+        let newPokedex = [...states.pokedex]
+        newPokedex.push(newPokemon)
+        setters.setPokedex(newPokedex);
+        alert(`${newPokemon.name} foi adicionado no Pokedex`)
+    }
 
     return (
         <div>
@@ -39,6 +40,6 @@ const Home = () => {
             </CardsContainer>
         </div>
     )
-};
 
+};
 export default Home;

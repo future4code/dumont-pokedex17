@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { MainContainer, ButtonContainer, Button } from './styled';
 
-const PokeCard = (props) => {
+const PokedexCard = (props) => {
     const [pokemonDetails, setPokemonDetails] = useState([])
     const [pokemonImage, setPokemonImage] = useState()
 
@@ -28,7 +28,7 @@ const PokeCard = (props) => {
             <p>{props.pokemonName}</p>
             <img src={pokemonImage} />
             <ButtonContainer>
-                <Button onClick={props.addToPokedex}>adicionar</Button>
+                <Button onClick={props.removePokemon}>remover</Button>
                 <Link to={'/details'}>
                     <Button>ver detalhe</Button>
                 </Link>
@@ -36,4 +36,4 @@ const PokeCard = (props) => {
         </MainContainer>
     )
 };
-export default PokeCard;
+export default PokedexCard;

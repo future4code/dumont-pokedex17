@@ -8,3 +8,8 @@ export const MainContainer = styled.div`
     heigth: 300px;
     border: 1px solid black;
 `
+
+export const Button = styled.button`
+    padding: 5px;
+    cursor: pointer;
+`
