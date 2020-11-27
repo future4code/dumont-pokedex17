@@ -30,7 +30,7 @@ const PokeCard = (props) => {
             <ButtonContainer>
                 <button onClick={props.addToPokedex}>adicionar</button>
                 <Link to={'/details'}>
-                    <button>ver detalhe</button>
+                    <button onClick={props.setPokemon}>ver detalhe</button>
                 </Link>
             </ButtonContainer>
         </MainContainer>

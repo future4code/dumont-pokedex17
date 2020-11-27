@@ -18,12 +18,16 @@ const Home = () => {
                 pokemonName={pokemon.name}
                 pokemonURL={pokemon.url}
                 addToPokedex = {() => addToPokedex(pokemon)}
+                setPokemon = {() => setPokemon(pokemon.name)}
             />
         )
     })
 
+    const setPokemon = (pokemon) => {
+        setters.setPokemonToDetail(pokemon)
+    }
+
     const addToPokedex = (newPokemon) => {
-        // const index = states.pokedex.findIndex((index) => index.name === newPokemon.name)
         let newPokedex = [...states.pokedex]
         newPokedex.push(newPokemon)
         setters.setPokedex(newPokedex);
