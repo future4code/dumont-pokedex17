@@ -10,6 +10,7 @@ export const MainContainer = styled.div`
     height: 360px;
     border-radius: 15px;
     margin-top: 10px;
+    box-shadow: 10px 5px 5px black;
 
     p{
         font-size: 22px;

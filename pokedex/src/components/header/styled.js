@@ -8,6 +8,9 @@ export const MainContainer = styled.div`
     width: 100vw;
     heigth: 300px;
     color: white;
+    p{
+        text-decoration: none;
+    }
 `
 
 export const Button = styled.button`

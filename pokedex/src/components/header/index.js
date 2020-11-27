@@ -46,7 +46,7 @@ const Header = (props) => {
                 )
             default:
                 return (
-                    <div>*</div>
+                    <div></div>
                 )
         }
     }
