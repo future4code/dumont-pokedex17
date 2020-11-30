@@ -7,6 +7,7 @@ export const MainContainer = styled.div`
     align-items: center;
     width: 300px;
     height: 360px;
+    background-color: rgb(253, 223, 104);
     border: 1px solid black;
 `
 
