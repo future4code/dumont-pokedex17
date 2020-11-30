@@ -10,6 +10,6 @@ Link do Surge: https://racial-houses.surge.sh/
 O que funciona:
 - Renderização dos pokemons na tela de home
 - Adicionar e remover pokemons na pokedex
-- Ver detalhes do pokemon
+- Detalhes do pokemon
 
 
