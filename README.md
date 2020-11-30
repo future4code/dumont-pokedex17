@@ -8,9 +8,8 @@ Nome dos integrantes:
 Link do Surge: https://racial-houses.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+- Renderização dos pokemons na tela de home
+- Adicionar e remover pokemons na pokedex
+- Ver detalhes do pokemon
 
-O que não funciona: 
-- Item 3
-- Item 4
+
