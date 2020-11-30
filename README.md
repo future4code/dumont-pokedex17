@@ -1,16 +1,15 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Isabela Rocha Silveira
+- Sarah Pereira Hessel
+- Noh Ah Jeong
 
-Link do Surge: www.link.com.br
+Link do Surge: https://racial-houses.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+- Renderização dos pokemons na tela de home
+- Adicionar e remover pokemons na pokedex
+- Detalhes do pokemon
 
-O que não funciona: 
-- Item 3
-- Item 4
+
